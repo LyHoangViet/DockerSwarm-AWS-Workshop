@@ -30,7 +30,7 @@ aws configure
 - Login vào ECR
 
 ```js
-aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 637423316258.dkr.ecr.ap-southeast-1.amazonaws.com
+aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin <AWS_Account_ID>.dkr.ecr.ap-southeast-1.amazonaws.com
 ```
 - Build một image
 
@@ -43,8 +43,8 @@ docker build -t aws-fcj-management .
 - Gắn tag cho nó và push lên ECR
 
 ```js
-docker tag aws-fcj-management:latest 637423316258.dkr.ecr.ap-southeast-1.amazonaws.com/aws-fcj-management:latest
-docker push 637423316258.dkr.ecr.ap-southeast-1.amazonaws.com/aws-fcj-management:latest
+docker tag aws-fcj-management:latest <AWS_Account_ID>.dkr.ecr.ap-southeast-1.amazonaws.com/aws-fcj-management:latest
+docker push <AWS_Account_ID>.dkr.ecr.ap-southeast-1.amazonaws.com/aws-fcj-management:latest
 ```
 
 ![ImageVPC](/images/4-ECR/2-Push/ECR-Push-img4.png?width=50pc)
