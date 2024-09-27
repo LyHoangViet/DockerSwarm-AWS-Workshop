@@ -30,8 +30,8 @@ vi docker-compose.yaml
 version: "3.9"
 services:
   app:
-    image: 637423316258.dkr.ecr.ap-southeast-1.amazonaws.com/aws-fcj-management:latest #Thay URI image tren ECR vao
-    environment:                # Bien moi truong cua database
+    image: <URI_Image_ECR> #Change URI image on ECR your 
+    environment:                # enviroment database
       - DB_HOST=${DB_HOST}
       - DB_NAME=${DB_NAME}
       - DB_USER=${DB_USER}
@@ -60,8 +60,6 @@ networks:
   When selecting the mode: - "Host" mode allows only one container corresponding to one replica to run on a node on a certain port, for example, port 5000. To run more, manual configuration is needed. - "Ingress" mode allows running multiple replicas on one node. However, since we are using the RDS free tier, it limits running on multiple nodes and replicas. Therefore, I chose the above mode for this example.
 {{% /notice %}}
 
-![ImageVPC](/images/6-DockerCompose/2-CreateFile/DockerCompose-Create-img2.png?width=50pc)
-
 - Use the command to check the file again.
 
 ```js
@@ -73,8 +71,8 @@ cat docker-compose.yaml
 - The .env file cannot be passed into Docker Swarm, so we need to pass it manually.
 
 ```js
-export DB_HOST=fcj-management-db-instance.cvcic2u0ggyb.ap-southeast-1.rds.amazonaws.com
-export DB_NAME=usermgt
-export DB_USER=admin
-export DB_PASS=123Vodanhphai
+export DB_HOST=<Endpoint_RDS>  //Change endpoin on RDS your 
+export DB_NAME=<db_name>       //Change name database your
+export DB_USER=<User_name>     //Change name user on RDS your 
+export DB_PASS=<password>      //Change passwork on RDS your 
 ```
