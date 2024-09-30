@@ -30,7 +30,7 @@ vi docker-compose.yaml
 version: "3.9"
 services:
   app:
-    image: <URI_Image_ECR> #Change URI image on ECR your 
+    image: ${IMAGE}             # URI image tren ECR 
     environment:                # enviroment database
       - DB_HOST=${DB_HOST}
       - DB_NAME=${DB_NAME}
@@ -66,11 +66,12 @@ networks:
 cat docker-compose.yaml
 ```
 
-![ImageVPC](/images/6-DockerCompose/2-CreateFile/DockerCompose-Create-img3.png?width=50pc)
+![ImageVPC](/images/6-DockerCompose/2-CreateFile/DockerCompose-Create-img2.png?width=50pc)
 
 - The .env file cannot be passed into Docker Swarm, so we need to pass it manually.
 
 ```js
+export IMAGE=<Image_URI>       //Change image on ECR your
 export DB_HOST=<Endpoint_RDS>  //Change endpoin on RDS your 
 export DB_NAME=<db_name>       //Change name database your
 export DB_USER=<User_name>     //Change name user on RDS your 

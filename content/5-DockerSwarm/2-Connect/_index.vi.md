@@ -19,6 +19,12 @@ ping -c5 amazon.com
 
 - Tiếp theo mình sẽ tải docker cho cả 2 nodes để có thể dùng được các lệnh của docker.
 
+```js
+sudo amazon-linux-extras install docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+```
+
 ![ImageVPC](/images/5-DockerSwarm/2-ConnectVS/DockerSwarm-VSCode-img2.png?width=50pc)
 
 - Sau đó mình đăng nhập vào ECR và kéo image đã build từ trước xuống để có thể chạy nó.
@@ -28,7 +34,7 @@ ping -c5 amazon.com
 {{% /notice %}}
 
 ```js
-aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 637423316258.dkr.ecr.ap-southeast-1.amazonaws.com
+aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin <Account_ID>.dkr.ecr.ap-southeast-1.amazonaws.com
 docker pull <URI_image>
 ```
 

@@ -20,6 +20,12 @@ ping -c5 amazon.com
 
 - Next, I will install Docker on both nodes so that we can use Docker commands.
 
+```js
+sudo amazon-linux-extras install docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+```
+
 ![ImageVPC](/images/5-DockerSwarm/2-ConnectVS/DockerSwarm-VSCode-img2.png?width=50pc)
 
 - After that, I will log in to ECR and pull down the previously built image to be able to run it.
@@ -29,7 +35,7 @@ You can use IAM to automatically log in for the virtual machines without needing
 {{% /notice %}}
 
 ```js
-aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 637423316258.dkr.ecr.ap-southeast-1.amazonaws.com
+aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin <Account_ID>.dkr.ecr.ap-southeast-1.amazonaws.com
 docker pull <URI_image>
 ```
 

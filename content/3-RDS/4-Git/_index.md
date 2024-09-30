@@ -19,8 +19,18 @@ pre = "<b>3.4. </b>"
 
 - Git clone a GitHub repository that you have prepared earlier.
 
+```js
+    git init
+    git clone https://github.com/AWS-First-Cloud-Journey/AWS-FCJ-Management.git
+```
+
 ![ImageVPC](/images/3-RDS/4-Git/RDS-Git-img2.png?width=50pc)
 
 - Navigate into the directory of the cloned repository.
+
+```js
+    ls
+    cd AWS-FCJ-Management/
+```
 
 ![ImageVPC](/images/3-RDS/4-Git/RDS-Git-img3.png?width=50pc)

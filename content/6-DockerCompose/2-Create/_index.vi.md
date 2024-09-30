@@ -29,7 +29,7 @@ vi docker-compose.yaml
 version: "3.9"
 services:
   app:
-    image: <URI_Image_ECR> #Thay URI image tren ECR vao
+    image: ${IMAGE}             # URI image tren ECR
     environment:                # Bien moi truong cua database
       - DB_HOST=${DB_HOST}
       - DB_NAME=${DB_NAME}
@@ -67,11 +67,12 @@ networks:
 cat docker-compose.yaml
 ```
 
-![ImageVPC](/images/6-DockerCompose/2-CreateFile/DockerCompose-Create-img3.png?width=50pc)
+![ImageVPC](/images/6-DockerCompose/2-CreateFile/DockerCompose-Create-img2.png?width=50pc)
 
 - File .env sẽ không truyền được vào docker swarm nên ta phải truyền bằng tay.
 
 ```js
+export IMAGE=<Image_URI>       //Change image on ECR your
 export DB_HOST=<Endpoint_RDS>  //Change endpoin on RDS your 
 export DB_NAME=<db_name>       //Change name database your
 export DB_USER=<User_name>     //Change name user on RDS your 
