@@ -10,7 +10,7 @@ chapter = false
 #### Overview
 In this workshop, I will present the process of deploying and working with **Docker**, a powerful tool for managing and operating containers. To effectively orchestrate and manage containers, I used **Docker Swarm** – a built-in solution provided by Docker. Additionally, I leveraged several services on **AWS** to optimize the deployment and management of the system on the cloud platform, which helps enhance the flexibility and scalability of the application.
 
-#### Kiến trúc
+#### Architecture
 
 ![Architecture](/images/1-Introduce/Architecture-img.png?width=50pc)
 
